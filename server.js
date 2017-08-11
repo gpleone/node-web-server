@@ -3,6 +3,8 @@ const hbs = require('hbs');
 const fs = require('fs');
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 // tell hbs to use partials
 hbs.registerPartials(__dirname + '/views/partials');
 // template engine
@@ -48,4 +50,4 @@ app.get( '/bad', (req, res) => {
     })
 })
 
-app.listen( 3000, () => console.log('listening on port 3000') );
+app.listen( PORT, () => console.log(`Listening on port ${PORT}`) );
